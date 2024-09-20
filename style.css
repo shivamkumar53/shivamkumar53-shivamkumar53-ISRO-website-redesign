@@ -1,0 +1,1471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    background: #171717;
+    user-select: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* For the entire page */
+body::-webkit-scrollbar {
+    width: 0px; /* Width of the scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: transparent; /* Background of the scrollbar track */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: transparent; /* Background color of the scrollbar thumb */
+  }
+  
+  
+
+header {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 13vh;
+    width: 100%;
+    background: transparent;
+}
+
+.isro-logo {
+    display: flex;
+}
+
+.isro-name-depart {
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.isro-name-depart h1 {
+    font-size: 2rem;
+    line-height: 32px;
+}
+
+.isro-name-depart p {
+    font-size: 1.2rem;
+}
+
+/* this is the second nav */
+
+.bar {
+    display: none;
+}
+
+.sec-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    width: 100%;
+    background-color: #F27117;
+}
+
+/* this is the menu  */
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    position: relative;
+}
+
+
+.menu-item,
+li {
+    list-style: none;
+}
+
+.menu-item a:hover i {
+    color: orange;
+}
+
+.menu-item a:hover{
+    color: orange;
+}
+.menu-item a {
+    padding: 0px 15px;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+}
+
+.menu-item i {
+    color: #FFFFFF;
+    font-size: .8vw;
+    margin: 0 5px;
+}
+
+.dropdown-menu {
+    width: 280px;
+    border-radius: 5px;
+    display: none;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    background-color: rgba(185, 185, 185, 0.099);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 2;
+}
+
+.dropdown-menu li a {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(76, 76, 76);
+}
+
+.menu-item:hover .dropdown-menu {
+    display: block;
+    margin-top: 0px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    padding: 0px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+/* this is the second nav search */
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input {
+    height: 2.5vw;
+    width: 65%;
+    font-size: 15px;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 8px;
+    color: #FFFFFF;
+    display: flex;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+}
+
+.search i {
+    padding-left: 3%;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+main {
+    padding-bottom: 2%;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Global styles */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    object-fit: cover;
+}
+
+.Description {
+    color: #FFFFFF;
+}
+
+
+/* General styles for the overlay div */
+
+.overlay {
+    overflow-x: hidden;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    padding: 20px;
+    color: white;
+    text-align: left;
+    width: 60%;
+    border-radius: 10px;
+    animation: slideUp .9s ease;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0px);
+        /* Adjust as needed */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+
+/* Responsive typography */
+.overlay p,
+.overlay h2 {
+    margin: 5px 0;
+}
+
+.overlay p {
+    color: #F27117;
+    font-size: 1.5rem;
+}
+
+.overlay h2 {
+    animation: slideup 0.3s ease;
+
+    font-size: 3rem;
+}
+
+.overlay .description {
+    font-size: 1.2rem;
+    color: rgb(207, 205, 205);
+}
+
+/* Styling the read-more link */
+
+.read-more {
+    display: inline-block;
+    border-radius: 8px;
+    height: 45px;
+    width: 120px;
+    text-align: center;
+    border: 1px solid rgb(110, 107, 107);
+    cursor: pointer;
+    background-color: #25232839;
+    backdrop-filter: blur(24px);
+    transition: background-color 0.3s ease;
+}
+
+.read-more a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.read-more i {
+    color: white;
+    margin-left: 5px;
+}
+
+.read-more:hover {
+    color: black;
+}
+
+.flash-news-contianer {
+    padding-top: 5%;
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+}
+
+
+.flash-news {
+    background-color: #1e1e1e;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(110, 107, 107);
+    height: 80px;
+    /* Set a fixed height for the flash news container */
+}
+
+.flash-news h4 {
+    color: #F27117;
+    position: absolute;
+    top: 5px;
+}
+
+.flash-news p {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    color: #Fff;
+    animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: #9d9292;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+.key-links-contianer {
+    padding-top: 5%;
+    width: 90vw;
+    margin: auto;
+    text-align: start;
+}
+
+.key-link-title-div {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    margin-left: 10px;
+}
+
+.title {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 1%;
+}
+
+.title-para {
+    color: #9d9292;
+    margin-top: -1%;
+    margin-bottom: 1%;
+    font-size: 1.2em;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.link-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: calc(50% - 20px);
+    /* Adjust for padding and margin */
+    box-sizing: border-box;
+    text-align: left;
+    border: 1px solid rgb(110, 107, 107);
+    cursor: pointer;
+}
+
+.link-card h3 {
+    color: white;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+.link-card p {
+    color: #9d9292;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.latest-news-container {
+    padding-top: 5%;
+    width: 90vw;
+    margin: auto;
+}
+
+.latest-news-cln {
+    justify-content: space-between;
+    align-items: start;
+    display: flex;
+    width: 100%;
+}
+
+.latest-news-title {
+    color: white;
+    margin-left: 0%;
+    font-size: 2em;
+    margin-bottom: 0%;
+}
+
+.latest-news-title-para {
+    color: #9d9292;
+    text-align: start;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+}
+
+.all-news {
+    display: inline-block;
+    border-radius: 8px;
+    height: 45px;
+    width: 120px;
+    text-align: center;
+    border: 1px solid rgb(110, 107, 107);
+    cursor: pointer;
+    background-color: #9191913a;
+    backdrop-filter: blur(15px);
+    transition: background-color 0.3s ease;
+}
+
+.all-news a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+
+.all-news i {
+    color: white;
+    margin-left: 5px;
+}
+
+/* this is the latest section image */
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.image-container {
+    position: relative;
+    flex: 1;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.image-container:hover .carousel-caption {
+    bottom: 40px;
+    opacity: 1;
+}
+
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: bottom 0.3s ease;
+}
+
+.latest-marks {
+    display: inline-block;
+    padding: 3px 5px 2px 5px;
+    border: 0;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.255);
+    backdrop-filter: blur(2px);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+
+.carousel-button {
+    top: 0%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+
+.carousel-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-dots span {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #888;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .active {
+    background-color: #fff;
+}
+
+
+.next-previous-btn {
+    display: flex;
+    padding-top: 1%;
+    justify-content: end;
+}
+
+.carousel-button {
+    margin: 5px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid rgb(110, 107, 107);
+    height: 40px;
+    border-radius: 50%;
+    width: 40px;
+    cursor: pointer;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button.active {
+    opacity: 1;
+    pointer-events: auto;
+    color: #Fff;
+    border: 1px solid white;
+}
+
+.carousel-button.inactive {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* this is the isro poartal section */
+
+.isro-portal-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 90vw;
+}
+
+.isro-portal-title {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 1%;
+}
+
+.isro-portal-title-para {
+    color: #9d9292;
+    margin-top: -1%;
+    margin-bottom: 1%;
+    font-size: 1.2em;
+}
+
+.container {
+    margin-top: 1%;
+    width: 90vw;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(110, 107, 107);
+    text-align: left;
+    cursor: pointer;
+    color: #FFf;
+    transition: background-color 0.7s ease;
+}
+
+.card span {
+    display: block;
+    margin-top: 10px;
+    color: #9d9292;
+}
+
+/* this is the recent update css */
+
+.recent-updates-div {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin-top: 5%;
+}
+
+.recent-updates-title {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 1%;
+}
+
+.recent-updates-title-para {
+    color: #9d9292;
+    margin-top: -1%;
+    font-size: 1.2em;
+}
+
+
+.recent-updates {
+    margin-top: 2%;
+    text-align: center;
+}
+
+.recent-updates h2 {
+    margin-bottom: 20px;
+}
+
+.updates-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    width: 90vw;
+    height: 100%;
+}
+
+.update-item {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.update-item img {
+    width: 100%;
+    height: 400px;
+    /* Set the desired height */
+    display: block;
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    transition: opacity 0.3s;
+}
+
+.update-item:hover img {
+    opacity: 0.4;
+}
+
+.update-info {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.update-info h3 {
+    margin-bottom: 5%;
+    font-weight: 500;
+}
+
+.update-info p {
+    margin-bottom: 10px;
+    opacity: 0;
+    color: #d8d5d5;
+    line-height: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.read-mores {
+    display: inline-block;
+    border-radius: 8px;
+    height: 45px;
+    width: 120px;
+    text-align: center;
+    border: 1px solid rgb(110, 107, 107);
+    cursor: pointer;
+    background-color: #7979791a;
+    backdrop-filter: blur(15px);
+    transition: background-color 0.3s ease;
+}
+
+.update-item:hover .update-info {
+    bottom: 50%;
+    transform: translateY(50%);
+    padding: 20px;
+}
+
+.update-item:hover .update-info p,
+.update-item:hover .read-mores {
+    opacity: 1;
+}
+
+.read-mores a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.read-mores i {
+    color: white;
+    margin-left: 5px;
+}
+
+.update-item:hover {
+    transform: scale(1.05);
+}
+
+/* this is the isro center & units section */
+
+.isro-centers-title {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 1%;
+}
+
+.isro-centers-title-para {
+    color: #9d9292;
+    margin-top: -1%;
+    font-size: 1.2em;
+}
+
+.isro-centers-title-div {
+    display: flex;
+    width: 90vw;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.isro-centers-units-div {
+    width: 90vw;
+    height: 100%;
+    margin-top: 1.2%;
+    display: flex;
+}
+
+.left-side {
+    width: 40%;
+    height: 100%;
+    display: flex;
+}
+
+.center-names-topnav {
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid rgb(110, 107, 107);
+    background-color: #252328;
+}
+
+.top-nav{
+    height: 70px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgb(110, 107, 107);
+}
+
+.top-nav ul{
+    display: flex;
+}
+
+.top-nav ul li{
+    margin: 2vw;
+}
+
+.top-nav ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.top-nav ul li a:hover{
+    color: #F27117;
+}
+
+.centers-name-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.centers-names{
+    height: 100px;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 10px;
+    border-radius: 30px;
+    border-bottom: 1px solid rgb(110, 107, 107);
+    transition: background-color 0.5s ease;
+}
+
+.centers-names:nth-child(5) {
+    border: none;
+}
+
+.centers-names:hover{
+    background-color: rgba(185, 185, 185, 0.099);
+}
+
+
+.centers-logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.centers-full-name{
+    margin-top: -2%;
+    margin-left: 3%;
+}
+
+.centers-full-name span{
+    color: white;
+    font-weight: 500;
+}
+
+.centers-full-name p{
+    color: #9d9292;
+}
+
+
+.right-side {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.india-img {
+    margin-top: -5%;
+}
+
+svg {
+    width: 100%;
+    height: 100%; /* Adjust height as needed */
+    display: block;
+    margin: auto;
+  }
+ 
+/* this is the footer css */
+
+.footer-container {
+    border-top: 1px solid rgb(110, 107, 107);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.footer-container div {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-container h3 {
+    margin-top: 0;
+}
+
+.footer-container p,
+.footer-container ul,
+.footer-container li {
+    margin: 5px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+
+}
+
+.footer-container .logo {
+    margin-top: 20px;
+    height: 0px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container>div {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-container .logo {
+        height: 0px;
+    }
+
+    .isro-centers-title-div {
+        margin-top: 10%;
+    }
+    
+    .recent-updates-div {
+        margin-top: 8%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .updates-container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    .india-img {
+        margin-top: -5%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .updates-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .updates-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .container {
+        width: 90vw;
+    } 
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .carousel-item img {
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive adjustments using media queries */
+@media (max-width: 1024px) {
+
+    .menu {
+        display: flex;
+    }
+
+    .overlay {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .overlay h2 {
+        font-size: 1.8rem;
+    }
+
+    .overlay p {
+        font-size: 1.3rem;
+    }
+
+    .overlay .description {
+        font-size: 1rem;
+    }
+
+    .isro-logo img {
+        height: 70px;
+    }
+
+    .stambh img {
+        height: 120px;
+    }
+
+    .isro-name-depart h1 {
+        font-size: 28px;
+    }
+
+    .title {
+        margin-bottom: 8px;
+    }
+
+    .isro-portal-title {
+        margin-bottom: 8px;
+    }
+
+    .recent-updates-title {
+        margin-bottom: 5px;
+    }
+
+    .isro-centers-title {
+        margin-bottom: 5px;
+    }
+
+    .top-nav ul li a{
+        font-size: 1.3vw;
+    }
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .overlay {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .overlay h2 {
+        font-size: 2.5rem;
+    }
+
+    .overlay p {
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+
+    .overlay .Description {
+        font-size: 1.2rem;
+    }
+
+    header {
+        height: 12vh;
+    }
+
+    .isro-logo img {
+        height: 9.5vh;
+    }
+
+    .stambh img {
+        height: 18vh;
+    }
+
+    .sec-nav {
+        justify-content: space-between;
+        padding-left: 3%;
+        padding-right: 3%;
+        height: 62px
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    .bar i {
+        color: #FFFFFF;
+        font-size: 28px;
+    }
+
+    .isro-name-depart {
+        margin-top: 10px;
+    }
+
+    .isro-name-depart h1 {
+        font-size: 25px;
+    }
+
+    .isro-name-depart p {
+        font-size: 18px;
+    }
+
+    .search input {
+        height: 40px;
+    }
+
+    .isro-portal-title {
+        font-size: 1.6em;
+        margin-bottom: 5px;
+    }
+
+    .isro-centers-title {
+        font-size: 1.6em;
+    }
+
+    .isro-portal-title-para {
+        font-size: 1em;
+        margin-top: -1%;
+        margin-bottom: 1%;
+    }
+
+
+    .isro-centers-title-para {
+        color: #9d9292;
+        margin-top: -1%;
+        margin-bottom: 1%;
+        font-size: 1.2em;
+    }
+
+    .carousel-item img {
+        margin-bottom: 10px;
+    }
+
+
+    .recent-updates-title {
+        font-size: 1.8em;
+        margin-bottom: 5px;
+    }
+
+    .recent-updates-title-para {
+        font-size: 1.2em;
+    }
+
+    .update-item {
+        width: 300px;
+    } 
+
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container div {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 599.98px) {
+
+    .search input {
+        height: 40px;
+    }
+
+    .overlay {
+        width: 100%;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .overlay h2 {
+        font-size: 1.2rem;
+    }
+
+    .overlay p {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .overlay .Description {
+        font-weight: 700;
+        font-size: 0.8rem;
+    }
+
+    .flash-news p {
+        font-size: 1.7vh;
+    }
+
+    header {
+        height: 100px;
+    }
+
+    .isro-logo img {
+        height: 10vh
+    }
+
+    .stambh img {
+        height: 15vh;
+    }
+
+    .isro-name-depart h1 {
+        font-size: 1rem;
+        line-height: 20px;
+    }
+
+    .isro-name-depart p {
+        font-size: .9rem;
+    }
+
+    .sec-nav {
+        justify-content: space-between;
+        padding-left: 4%;
+        height: 55px
+    }
+
+    .bar {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .bar i {
+        color: #FFFFFF;
+        font-size: 25px;
+    }
+
+    .search input {
+        height: 37px;
+    }
+
+    .latest-news-title {
+        width: 55%;
+        font-size: 2.7vh;
+        margin-bottom: 5px;
+    }
+
+    .latest-news-title-para {
+        margin-top: 2%;
+        font-size: 1em;
+        margin-bottom: 4%;
+    }
+
+    
+.latest-news-cln {
+    margin-top: 5%;
+}
+
+    .title-para {
+        font-size: 1em;
+    }
+
+    .read-more {
+        height: 35px;
+        width: 100px;
+    }
+
+    .read-mores {
+        height: 35px;
+        width: 100px;
+    }
+
+    .recent-updates-div {
+        margin-top: 12%;
+    }
+
+    .read-more a {
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+    .read-mores a {
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+
+    .all-news {
+        height: 40px;
+        width: 110px;
+    }
+
+    .all-news a {
+        font-size: 1.1em;
+    }
+
+    .carousel-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .recent-updates-title {
+        font-size: 1.4em;
+        margin-bottom: 4px;
+    }
+
+    .recent-updates-title-para {
+        font-size: 1em;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 90vw;
+    }
+
+    .isro-portal-title {
+        font-size: 1.4em;
+        margin-bottom: 5px;
+    }
+
+    .isro-centers-title {
+        font-size: 1.4em;
+        margin-bottom: 5px;
+    }
+
+    .isro-portal-title-para {
+        font-size: 0.9em;
+        margin-top: -1%;
+        margin-bottom: 1%;
+    }
+
+    .isro-centers-title-para {
+        color: #9d9292;
+        margin-top: -1%;
+        margin-bottom: 1%;
+        font-size: 0.9em;
+    }
+
+    .isro-centers-units-div{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2%;
+    }
+
+    .top-nav ul li a{
+        font-weight: 600;
+        font-size: 1.8vh;
+    }
+
+    .center-names-topnav{
+        width: 90vw;
+    }
+
+    .left-side{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .top-nav ul li a{
+        font-size: 15px;
+    }
+
+    .right-side{
+        margin-top: 8%;
+        width: 90%;
+    }
+
+    .footer-container {
+        padding: 10px;
+    }
+
+    .footer-container div {
+        margin: 5px 0;
+    }
+
+    .footer-container .logo {
+        margin-bottom: -80px;
+        height: 0px;
+    }
+
+    .link-card {
+        width: 90vw;
+    }
+
+    
+svg {
+    margin-top: -200%;
+    width: 100%;
+    height: 100%; /* Adjust height as needed */
+    display: block;
+    margin: auto;
+  }
+    .updates-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; 
+        width: 90vw;
+        height: 100%;
+    }
+
+}
+
+
+@media (max-width: 343.98px) {
+    .landing-page {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 25vh;
+    }
+}
